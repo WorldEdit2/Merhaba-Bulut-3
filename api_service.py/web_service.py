@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 
 
-API_URL = "https://hello-cloud4.onrender.com"
+API_URL = "https://merhaba-bulut-3-1.onrender.com"
 
 
 HTML = """
