@@ -21,29 +21,29 @@ DATABASE_URL = os.getenv(
 
 def connect_db():
 
-return psycopg2.connect(DATABASE_URL)
+ return psycopg2.connect(DATABASE_URL)
 
 
 @app.route("/ziyaretciler", methods=["GET", "POST"])
 
 def ziyaretciler():
 
-conn = connect_db()
+  conn = connect_db()
 
-cur = conn.cursor()
+  cur = conn.cursor()
 
-cur.execute("CREATE TABLE IF NOT EXISTS ziyaretciler (id SERIAL PRIMARY KEY, isim TEXT)")
+  cur.execute("CREATE TABLE IF NOT EXISTS ziyaretciler (id SERIAL PRIMARY KEY, isim TEXT)")
 
 
 if request.method == "POST":
 
-isim = request.json.get("isim")
+ isim = request.json.get("isim")
 
-if isim:
+ if isim:
 
-cur.execute("INSERT INTO ziyaretciler (isim) VALUES (%s)", (isim,))
+   cur.execute("INSERT INTO ziyaretciler (isim) VALUES (%s)", (isim,))
 
-conn.commit()
+   conn.commit()
 
 
 cur.execute("SELECT isim FROM ziyaretciler ORDER BY id DESC LIMIT 10")
@@ -61,4 +61,4 @@ return jsonify(isimler)
 
 if __name__ == "__main__":
 
-app.run(host="0.0.0.0", port=5001)
+  app.run(host="0.0.0.0", port=5001)
