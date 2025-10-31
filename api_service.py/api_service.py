@@ -7,7 +7,7 @@ CORS(app)
 
 DATABASE_URL = os.getenv(
 "DATABASE_URL",
-"postgresql://volkan:201eAcwsVd7cf1jyxQL2F1wn4VZ3FSbW@dpg-d3t90iur433s73b5q070-a.oregon-postgres.render.com/cloud_db_gwjr"
+"postgresql://enes:R9jTctcoXYU3SmSm63KrQ06N4cR9jv91@dpg-d426sq1r0fns739058mg-a.oregon-postgres.render.com/bulut_bilisim_2"
 )
 
 def connect_db():
